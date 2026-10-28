@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply antialiased;
+  }
+  
+  body {
+    @apply bg-slate-50 dark:bg-slate-900 min-h-screen;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* iOS safe area support */
+  .safe-area-inset-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  
+  .safe-area-inset-top {
+    padding-top: max(20px, env(safe-area-inset-top));
+  }
+}
+
+@layer utilities {
+  /* Smooth scrolling for iOS */
+  .scroll-smooth-ios {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* 3D Flip Animation */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+}
+
+/* Emoji Picker Dark Mode Styles */
+.epr-dark {
+  --epr-bg-color: rgb(30 41 55);
+  --epr-text-color: rgb(226 232 240);
+  --epr-category-label-bg-color: rgb(51 65 85);
+  --epr-search-input-bg-color: rgb(51 65 85);
+  --epr-search-input-text-color: rgb(226 232 240);
+  --epr-search-input-border-color: rgb(71 85 105);
+  --epr-emoji-hover-bg-color: rgb(51 65 85);
+  --epr-skin-tone-picker-menu-bg-color: rgb(51 65 85);
+  --epr-preview-bg-color: rgb(51 65 85);
+  --epr-preview-text-color: rgb(226 232 240);
+}
+
+.epr-dark .epr-emoji-category-label {
+  background-color: var(--epr-category-label-bg-color);
+  color: var(--epr-text-color);
+}
+
+.epr-dark .epr-search-container input {
+  background-color: var(--epr-search-input-bg-color);
+  color: var(--epr-search-input-text-color);
+  border-color: var(--epr-search-input-border-color);
+}
+
+.epr-dark .epr-emoji:hover {
+  background-color: var(--epr-emoji-hover-bg-color);
+}
+
